@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東德教育集團 | 客製化專屬補習服務、內湖補習班推薦</title>
+    <meta name="description" content="東德教育集團提供國小、國中、高中及私中專班、一對一教學等客製化補習服務，是面對混亂教改的唯一選擇。提供7天免費試聽！">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 基礎設定 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans TC', sans-serif; }
+        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* 頂部導覽列 (吸頂設計) */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+        .logo { font-size: 24px; font-weight: 700; color: #1a365d; }
+        .nav-links { display: flex; gap: 25px; list-style: none; }
+        .nav-links li a { font-weight: 500; transition: color 0.3s; }
+        .nav-links li a:hover { color: #e53e3e; }
+        
+        /* 行動呼籲按鈕 (CTA) */
+        .cta-btn {
+            background-color: #e53e3e;
+            color: #ffffff !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+        .cta-btn:hover { background-color: #c53030; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(229,62,62,0.3); }
+
+        /* 主視覺區塊 (Hero Section) */
+        .hero {
+            background: linear-gradient(rgba(26,54,93,0.8), rgba(26,54,93,0.8)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* 課程特色卡片區塊 */
+        .section-title { text-align: center; font-size: 2.2rem; color: #1a365d; margin: 60px 0 30px; }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            margin-bottom: 60px;
+        }
+        .course-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 4px solid #3182ce;
+        }
+        .course-card:hover { transform: translateY(-10px); }
+        .course-card h3 { font-size: 1.5rem; color: #2b6cb0; margin-bottom: 15px; }
+        .course-card p { color: #4a5568; margin-bottom: 20px; }
+
+        /* 懸浮 LINE 客服 */
+        .floating-line {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #00B900;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.3s;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .floating-line:hover { transform: scale(1.1); }
+
+        /* 頁尾分校資訊 */
+        footer {
+            background-color: #1a202c;
+            color: #a0aec0;
+            padding: 60px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        footer h4 { color: #edf2f7; font-size: 1.2rem; margin-bottom: 20px; }
+        .branch-info p { margin-bottom: 10px; }
+        .branch-info a { color: #63b3ed; }
+        .copyright { text-align: center; padding: 20px; background: #171923; color: #718096; }
+
+        /* RWD 行動裝置適配 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; /* 手機版建議另外寫漢堡選單 */ }
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; gap: 15px; }
+            .cta-btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">東德教育集團</div>
+        <ul class="nav-links">
+            <li><a href="#about">關於東德</a></li>
+            <li><a href="#courses">課程介紹</a></li>
+            <li><a href="#feedback">家長反饋</a></li>
+            <li><a href="#news">最新消息</a></li>
+        </ul>
+        <a href="#trial" class="cta-btn">立即報名 7天免費試聽</a>
+    </header>
+
+    <section class="hero">
+        <h1>客製化的專屬補習服務</h1>
+        <p>面對混亂教改的唯一選擇。專業化教育讓孩子事半功倍，客製化課輔對症下藥解決痛點！東德，陪你一起進步。</p>
+        <a href="#trial" class="cta-btn" style="font-size: 1.2rem; padding: 15px 35px;">了解專屬課程規劃</a>
+    </section>
+
+    <h2 class="section-title" id="courses">全方位課程規劃</h2>
+    <div class="courses-grid">
+        <div class="course-card">
+            <h3>國小專區</h3>
+            <p>平日正英美語 / 資優數學 / 私中專班<br>搶先贏在起跑點，提前規劃升學內容。</p>
+            <a href="#" style="color: #e53e3e; font-weight: bold;">點我了解更多 ➜</a>
+        </div>
+        <div class="course-card">
+            <h3>國中專區</h3>
+            <p>國一、國二、國三會考衝刺班<br>精準打擊弱點，期末考、會考不再煩惱。</p>
+            <a href="#" style="color: #e53e3e; font-weight: bold;">點我了解更多 ➜</a>
+        </div>
+        <div class="course-card">
+            <h3>高中專區</h3>
+            <p>高一至高三進度與學測複習<br>客製化指導，幫助孩子考上理想大學。</p>
+            <a href="#" style="color: #e53e3e; font-weight: bold;">點我了解更多 ➜</a>
+        </div>
+        <div class="course-card">
+            <h3>SESS 一對一教學</h3>
+            <p>針對孩子學習上遇到的問題，提供最精準的客製化一對一專屬服務。</p>
+            <a href="#" style="color: #e53e3e; font-weight: bold;">點我了解更多 ➜</a>
+        </div>
+    </div>
+
+    <a href="您的LINE官方連結" class="floating-line" target="_blank">
+        LINE<br>諮詢
+    </a>
+
+    <footer>
+        <div class="branch-info">
+            <h4>關於東德</h4>
+            <p>客製化的專屬補習服務，解決孩子學習痛點。</p>
+            <p>服務時間：週一~ 週五 13:00–22:00</p>
+        </div>
+        <div class="branch-info">
+            <h4>東湖校</h4>
+            <p>電話：<a href="tel:02-26306133">02-2630-6133</a></p>
+            <p>地址：台北市內湖區康寧路三段174號</p>
+        </div>
+        <div class="branch-info">
+            <h4>麗山校</h4>
+            <p>電話：<a href="tel:02-26279528">02-2627-9528</a></p>
+            <p>地址：臺北市內湖區內湖路一段629巷45號</p>
+        </div>
+    </footer>
+    <div class="copyright">
+        Copyright © 2026 東德教育集團. All rights reserved.
+    </div>
+
+    <script>
+        // 加入簡單的平滑滾動效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
