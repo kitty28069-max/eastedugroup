@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東德教育集團 | 客製化專屬補習服務、內湖補習班推薦</title>
+    <meta name="description" content="東德教育集團提供國小、國中、高中及私中專班、一對一教學等客製化補習服務，是面對混亂教改的唯一選擇。提供7天免費試聽！">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 基礎設定 */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noto Sans TC', sans-serif; }
+        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* 頂部導覽列 */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+        .logo { font-size: 26px; font-weight: 700; color: #1a365d; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links li a { font-weight: 500; color: #4a5568; transition: color 0.3s; }
+        .nav-links li a:hover { color: #e53e3e; }
+        
+        /* 行動呼籲按鈕 (CTA) */
+        .cta-btn {
+            background-color: #e53e3e;
+            color: #ffffff !important;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(229,62,62,0.2);
+            display: inline-block;
+        }
+        .cta-btn:hover { 
+            background-color: #c53030; 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 18px rgba(229,62,62,0.4); 
+        }
+
+        /* 主視覺區塊 (Hero Section) */
+        .hero {
+            background: linear-gradient(rgba(26,54,93,0.75), rgba(43,108,176,0.75)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 140px 20px;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.25rem; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8; opacity: 0.95; }
+
+        /* 區塊標題 */
+        .section-title { 
+            text-align: center; 
+            font-size: 2.2rem; 
+            color: #1a365d; 
+            margin: 80px 0 40px; 
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #e53e3e;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* 課程特色卡片區塊 (加入圖片) */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 5%;
+            margin-bottom: 80px;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            border-bottom: 4px solid #3182ce;
+        }
+        .course-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+        .course-card .card-img {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .course-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .course-card:hover .card-img img {
+            transform: scale(1.08);
+        }
+        .course-content {
+            padding: 30px 25px;
+            text-align: center;
+        }
+        .course-content h3 { font-size: 1.5rem; color: #2b6cb0; margin-bottom: 15px; }
+        .course-content p { color: #4a5568; margin-bottom: 25px; min-height: 50px; }
+
+        /* 環境展示區塊 (圖集) */
+        .environment-section {
+            background-color: #ffffff;
+            padding: 20px 5% 80px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* 懸浮 LINE 客服 */
+        .floating-line {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #00B900;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.3s;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .floating-line:hover { transform: scale(1.1); color: white; }
+
+        /* 頁尾分校資訊 */
+        footer {
+            background-color: #1a202c;
+            color: #a0aec0;
+            padding: 70px 5%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        footer h4 { color: #edf2f7; font-size: 1.3rem; margin-bottom: 20px; border-bottom: 2px solid #4a5568; padding-bottom: 10px; display: inline-block;}
+        .branch-info p { margin-bottom: 12px; }
+        .branch-info a { color: #63b3ed; transition: color 0.3s; }
+        .branch-info a:hover { color: #90cdf4; }
+        .copyright { text-align: center; padding: 20px; background: #171923; color: #718096; font-size: 0.9rem;}
+
+        /* RWD 行動裝置適配 */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            header { flex-direction: column; gap: 15px; }
+            .cta-btn { width: 100%; text-align: center; }
+            .section-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部導覽列 -->
+    <header>
+        <div class="logo">東德教育集團</div>
+        <ul class="nav-links">
+            <li><a href="#about">關於東德</a></li>
+            <li><a href="#courses">課程介紹</a></li>
+            <li><a href="#environment">學習環境</a></li>
+            <li><a href="#news">最新消息</a></li>
+        </ul>
+        <!-- 預約連結更新為 mailto -->
+        <a href="mailto:eastedugroup@gmail.com?subject=預約7天免費試聽_您的姓名&body=您好，我想預約7天免費試聽。%0D%0A家長姓名：%0D%0A聯絡電話：%0D%0A學生年級：" class="cta-btn">立即報名 7天免費試聽</a>
+    </header>
+
+    <!-- 主視覺區塊 -->
+    <section class="hero">
+        <h1>客製化的專屬補習服務</h1>
+        <p>面對混亂教改的唯一選擇。專業化教育讓孩子事半功倍，客製化課輔對症下藥解決痛點！東德，陪你一起進步。</p>
+        <!-- 預約連結更新為 mailto -->
+        <a href="mailto:eastedugroup@gmail.com?subject=預約專屬課程規劃諮詢" class="cta-btn" style="font-size: 1.2rem; padding: 15px 35px;">了解專屬課程規劃</a>
+    </section>
+
+    <!-- 課程特色卡片區塊 -->
+    <h2 class="section-title" id="courses">全方位課程規劃</h2>
+    <div class="courses-grid">
+        <div class="course-card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="國小專區">
+            </div>
+            <div class="course-content">
+                <h3>國小專區</h3>
+                <p>平日正英美語 / 資優數學 / 私中專班<br>搶先贏在起跑點，提前規劃升學內容。</p>
+                <a href="mailto:eastedugroup@gmail.com?subject=我想了解國小專區課程" style="color: #e53e3e; font-weight: bold;">點我了解更多 ➜</a>
+            </div>
+        </div>
+        <div class="course-card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=600&q=80" alt="國中專區">
+            </div>
+            <div class="course-content">
+                <h3>國中專區</h3>
+                <p>國一、國二、國三會考衝刺班<br>精準打擊弱點，期末考、會考不再煩惱。</p>
+                <a href="mailto:eastedugroup@gmail.com?subject=我想了解國中專區課程" style="color: #e53e3e; font-weight: bold;">點我了解更多 ➜</a>
+            </div>
+        </div>
+        <div class="course-card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="高中專區">
+            </div>
+            <div class="course-content">
+                <h3>高中專區</h3>
+                <p>高一至高三進度與學測複習<br>客製化指導，幫助孩子考上理想大學。</p>
+                <a href="mailto:eastedugroup@gmail.com?subject=我想了解高中專區課程" style="color: #e53e3e; font-weight: bold;">點我了解更多 ➜</a>
+            </div>
+        </div>
+        <div class="course-card">
+            <div class="card-img">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="一對一教學">
+            </div>
+            <div class="course-content">
+                <h3>SESS 一對一教學</h3>
+                <p>針對孩子學習上遇到的問題，提供最精準的客製化一對一專屬服務。</p>
+                <a href="mailto:eastedugroup@gmail.com?subject=我想了解一對一教學課程" style="color: #e53e3e; font-weight: bold;">點我了解更多 ➜</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 新增：優質學習環境區塊 -->
+    <section class="environment-section" id="environment">
+        <h2 class="section-title">優質學習環境</h2>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="明亮寬敞的教室">
+            <img src="https://images.unsplash.com/photo-1577896849786-738ed6c78a5f?auto=format&fit=crop&w=600&q=80" alt="專屬輔導空間">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="小班制互動教學">
+        </div>
+    </section>
+
+    <!-- 懸浮 LINE 客服 -->
+    <a href="您的LINE官方連結" class="floating-line" target="_blank">
+        LINE<br>諮詢
+    </a>
+
+    <!-- 頁尾區塊 -->
+    <footer id="about">
+        <div class="branch-info">
+            <h4>關於東德</h4>
+            <p>客製化的專屬補習服務，解決孩子學習痛點。</p>
+            <p>服務時間：週一~ 週五 13:00–22:00</p>
+            <p style="margin-top: 15px;">
+                <a href="mailto:eastedugroup@gmail.com" style="display: inline-block; background: #e53e3e; color: white; padding: 8px 15px; border-radius: 5px; font-weight: bold;">✉ 點此發信聯繫我們</a>
+            </p>
+        </div>
+        <div class="branch-info">
+            <h4>東湖校</h4>
+            <p>電話：<a href="tel:02-26306133">02-2630-6133</a></p>
+            <p>地址：台北市內湖區康寧路三段174號</p>
+        </div>
+        <div class="branch-info">
+            <h4>麗山校</h4>
+            <p>電話：<a href="tel:02-26279528">02-2627-9528</a></p>
+            <p>地址：臺北市內湖區內湖路一段629巷45號</p>
+        </div>
+    </footer>
+    <div class="copyright">
+        Copyright © 2026 東德教育集團. All rights reserved.
+    </div>
+
+    <script>
+        // 平滑滾動效果
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
